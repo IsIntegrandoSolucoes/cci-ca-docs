@@ -21,17 +21,23 @@ Este índice organiza toda a documentação técnica da expansão LMS + B2B do s
 
 ### 2.1 📋 Requisitos e Planejamento Estratégico
 
-| Documento                                                          | Descrição                                          | Última Atualização |
-| ------------------------------------------------------------------ | -------------------------------------------------- | ------------------ |
-| [mudancas.md](mudancas.md)                                         | Documento mestre de requisitos e decisões técnicas | 2026-02-27         |
-| [ROADMAP_EXECUCAO_LMS_B2B.md](ROADMAP_EXECUCAO_LMS_B2B.md)         | Roadmap de execução por fases com "Pronto quando"  | 2026-02-27         |
-| [PLANO_MIGRATIONS_SQL_LMS_B2B.md](PLANO_MIGRATIONS_SQL_LMS_B2B.md) | Sequência de migrações SQL com critérios de aceite | 2026-02-27         |
+| Documento                                                                    | Descrição                                                       | Última Atualização |
+| ---------------------------------------------------------------------------- | --------------------------------------------------------------- | ------------------ |
+| [mudancas.md](mudancas.md)                                                   | Documento mestre de requisitos e decisões técnicas              | 2026-02-27         |
+| [ROADMAP_EXECUCAO_LMS_B2B.md](ROADMAP_EXECUCAO_LMS_B2B.md)                   | Roadmap de execução por fases com "Pronto quando"               | 2026-02-27         |
+| [PLANO_MIGRATIONS_SQL_LMS_B2B.md](PLANO_MIGRATIONS_SQL_LMS_B2B.md)           | Sequência de migrações SQL com critérios de aceite              | 2026-02-27         |
+| [PLANO_KICKOFF_GOVERNANCA_LMS_B2B.md](PLANO_KICKOFF_GOVERNANCA_LMS_B2B.md)   | Governança, RACI, ritos e critérios de entrada/saída            | 2026-02-27         |
+| [BACKLOG_HISTORIAS_USUARIO_LMS_B2B.md](BACKLOG_HISTORIAS_USUARIO_LMS_B2B.md) | Backlog priorizado por fase com critérios de aceite             | 2026-02-27         |
+| [PLANO_HOMOLOGACAO_UAT_LMS_B2B.md](PLANO_HOMOLOGACAO_UAT_LMS_B2B.md)         | Plano de homologação funcional por perfil e critérios de aceite | 2026-02-27         |
 
 **Leitura Recomendada:**
 
 1. mudancas.md (entender requisitos)
 2. ROADMAP_EXECUCAO_LMS_B2B.md (entender fases)
 3. PLANO_MIGRATIONS_SQL_LMS_B2B.md (entender ordem SQL)
+4. PLANO_KICKOFF_GOVERNANCA_LMS_B2B.md (organização operacional da execução)
+5. BACKLOG_HISTORIAS_USUARIO_LMS_B2B.md (planejamento tático por sprint)
+6. PLANO_HOMOLOGACAO_UAT_LMS_B2B.md (validação funcional antes do go-live)
 
 ---
 

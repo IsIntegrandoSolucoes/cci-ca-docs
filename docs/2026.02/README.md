@@ -148,6 +148,15 @@ _Fases de implementação com "Pronto quando"._
 **[PLANO_MIGRATIONS_SQL_LMS_B2B.md](PLANO_MIGRATIONS_SQL_LMS_B2B.md)**  
 _Sequência de migrações SQL com testes._
 
+**[PLANO_KICKOFF_GOVERNANCA_LMS_B2B.md](PLANO_KICKOFF_GOVERNANCA_LMS_B2B.md)**  
+_Plano operacional de kickoff com governança, RACI, cadência e critérios de entrada/saída por fase._
+
+**[BACKLOG_HISTORIAS_USUARIO_LMS_B2B.md](BACKLOG_HISTORIAS_USUARIO_LMS_B2B.md)**  
+_Backlog de histórias de usuário por fase com prioridade, dependências e critérios de aceite testáveis._
+
+**[PLANO_HOMOLOGACAO_UAT_LMS_B2B.md](PLANO_HOMOLOGACAO_UAT_LMS_B2B.md)**  
+_Plano de homologação funcional (UAT) com cenários por perfil, critérios de entrada/saída e evidências esperadas._
+
 ---
 
 ## 🚀 Quick Start (Implementação)
