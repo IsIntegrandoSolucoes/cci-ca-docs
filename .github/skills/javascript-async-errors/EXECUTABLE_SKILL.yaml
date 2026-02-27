@@ -1,0 +1,84 @@
+name: javascript-async-errors-auditor
+description: "Audita assincronia e tratamento de erros em JavaScript (Promise combinators, memory leaks e erros customizados)"
+version: "1.0.0"
+
+capabilities:
+  - classify_promise_combinator_usage
+  - detect_event_loop_order_risks
+  - detect_common_memory_leaks
+  - evaluate_custom_error_strategy
+  - evaluate_rethrow_decisions
+
+inputs:
+  code:
+    type: string
+    description: "Codigo JavaScript/TypeScript para auditoria"
+    required: true
+  context:
+    type: object
+    description: "Contexto opcional (runtime, tipo de modulo, camada de arquitetura)"
+    properties:
+      runtime:
+        type: string
+        enum: [browser, node, deno, bun, unknown]
+      layer:
+        type: string
+        enum: [ui, service, domain, infra, unknown]
+
+outputs:
+  issues:
+    type: array
+    items:
+      type: object
+      properties:
+        severity:
+          type: string
+          enum: [error, warning, info]
+        category:
+          type: string
+          enum:
+            [
+              wrong_promise_combinator,
+              event_loop_misconception,
+              listener_leak,
+              timer_leak,
+              retained_reference_leak,
+              weak_error_model,
+              improper_rethrow,
+            ]
+        line:
+          type: integer
+        message:
+          type: string
+        recommendation:
+          type: string
+        example_fix:
+          type: string
+
+entrypoint:
+  type: inline
+  runtime: llm
+  prompt: |
+    Voce e um especialista em assincronia e erros em JavaScript.
+
+    Analise o codigo abaixo e avalie:
+    1. Uso adequado de Promise.all / Promise.race / Promise.allSettled
+    2. Problemas de ordem de execucao (microtasks vs macrotasks)
+    3. Tres leaks comuns: listeners nao removidos, timers sem cleanup, referencias retidas
+    4. Modelagem de erros customizados
+    5. Quando tratar localmente e quando relancar excecoes
+
+    Codigo:
+    ```js
+    {{code}}
+    ```
+
+    Retorne JSON com array issues contendo:
+    - severity
+    - category
+    - line
+    - message
+    - recommendation
+    - example_fix
+
+    Foque em correcoes praticas e seguras, sem alterar comportamento de negocio sem justificativa.

@@ -1,0 +1,27 @@
+## description: Diretrizes de acessibilidade para aplicações TypeScript + React para garantir design inclusivo e conformidade com os padrões WCAG.
+
+-    Use elementos HTML semânticos para estrutura adequada do documento.
+-    Implemente hierarquia adequada de cabeçalhos (h1, h2, h3, etc.) para organização do conteúdo.
+-    Use atributos ARIA apropriadamente para melhorar a acessibilidade para leitores de tela.
+-    Garanta contraste de cores suficiente (mínimo 4.5:1 para texto normal, 3:1 para texto grande).
+-    Implemente gerenciamento adequado de foco para navegação por teclado.
+-    Use `aria-label` ou `aria-labelledby` para botões de ícone e elementos decorativos.
+-    Forneça texto alternativo para imagens usando atributos `alt`.
+-    Implemente links de navegação rápida para usuários de teclado.
+-    Use atributos `role` quando necessário para definir propósitos dos elementos.
+-    Garanta que inputs de formulário tenham rótulos associados usando pareamento `htmlFor`/`id`.
+-    Implemente mensagens de erro adequadas com regiões `aria-live` para atualizações dinâmicas.
+-    Use `tabindex` apropriadamente (preferencialmente apenas `tabindex="0"` ou `tabindex="-1"`).
+-    Implemente roles de marco adequados (banner, main, navigation, etc.) para leitores de tela.
+-    Garanta que todos os elementos interativos sejam acessíveis por teclado.
+-    Use media query `prefers-reduced-motion` para usuários com sensibilidade ao movimento.
+-    Implemente marcação adequada de tabelas com atributos `thead`, `tbody`, `th` e `scope`.
+-    Use `aria-hidden="true"` para elementos decorativos que devem ser ignorados por leitores de tela.
+-    Implemente atributos de idioma adequados (`lang`) em elementos HTML.
+-    Garanta que o redimensionamento de texto funcione adequadamente até 200% de zoom.
+-    Use `aria-expanded` para seções recolhíveis e menus dropdown.
+-    Implemente acessibilidade adequada de diálogos modais com captura de foco.
+-    Use `aria-current` para indicadores de página atual na navegação.
+-    Garanta ordem de leitura adequada para leitores de tela com posicionamento CSS.
+-    Teste com leitores de tela como NVDA, JAWS ou VoiceOver.
+-    Use ferramentas de teste de acessibilidade como axe-core no fluxo de desenvolvimento.

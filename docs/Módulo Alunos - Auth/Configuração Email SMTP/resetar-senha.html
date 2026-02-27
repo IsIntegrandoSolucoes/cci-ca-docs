@@ -1,0 +1,105 @@
+<head>
+     <meta charset="UTF-8" />
+     <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+     />
+     <title>Redefinir Senha - CCI-CA</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Nunito', 'Inter', Arial, sans-serif; background-color: #f9fafb">
+     <table
+          role="presentation"
+          style="width: 100%; border-collapse: collapse; background-color: #f9fafb"
+     >
+          <tr>
+               <td
+                    align="center"
+                    style="padding: 40px 20px"
+               >
+                    <table
+                         role="presentation"
+                         style="max-width: 600px; width: 100%; border-collapse: collapse; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+                    >
+                         <!-- Header -->
+                         <tr>
+                              <td style="background: linear-gradient(135deg, #bd93f9 0%, #8be9fd 100%); padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0">
+                                   <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)">🎓 Consultório de Aprendizagem</h1>
+                                   <p style="margin: 8px 0 0 0; color: #f8f8f2; font-size: 14px; opacity: 0.95">CCI-CA | Excelência Educacional</p>
+                              </td>
+                         </tr>
+
+                         <!-- Content -->
+                         <tr>
+                              <td style="padding: 40px 30px">
+                                   <h2 style="margin: 0 0 20px 0; color: #1f2937; font-size: 22px; font-weight: 600; border-left: 4px solid #8be9fd; padding-left: 16px">Redefinir sua Senha</h2>
+
+                                   <p style="margin: 0 0 20px 0; color: #1f2937; font-size: 16px; line-height: 1.6">Olá! 🔐</p>
+
+                                   <p style="margin: 0 0 30px 0; color: #1f2937; font-size: 16px; line-height: 1.6">Recebemos uma solicitação para redefinir a senha da sua conta no <strong>CCI-CA</strong>. Se foi você quem solicitou, clique no botão abaixo para criar uma nova senha:</p>
+
+                                   <!-- CTA Button -->
+                                   <table
+                                        role="presentation"
+                                        style="width: 100%; border-collapse: collapse; margin: 0 0 30px 0"
+                                   >
+                                        <tr>
+                                             <td align="center">
+                                                  <a
+                                                       href="{{ .ConfirmationURL }}"
+                                                       style="
+                                                            display: inline-block;
+                                                            background: linear-gradient(135deg, #8be9fd 0%, #bd93f9 100%);
+                                                            color: #1f2937;
+                                                            text-decoration: none;
+                                                            padding: 16px 40px;
+                                                            border-radius: 6px;
+                                                            font-size: 16px;
+                                                            font-weight: 600;
+                                                            box-shadow: 0 4px 8px rgba(139, 233, 253, 0.3);
+                                                            transition: all 0.3s ease;
+                                                       "
+                                                  >
+                                                       🔑 Redefinir Senha
+                                                  </a>
+                                             </td>
+                                        </tr>
+                                   </table>
+
+                                   <div style="background-color: rgba(139, 233, 253, 0.08); border-left: 4px solid #8be9fd; padding: 16px; border-radius: 6px; margin: 0 0 20px 0">
+                                        <p style="margin: 0 0 8px 0; color: #1f2937; font-size: 14px; font-weight: 600">⚠️ Link Alternativo</p>
+                                        <p style="margin: 0 0 8px 0; color: #6b7280; font-size: 13px; line-height: 1.5">Se o botão não funcionar, copie e cole o seguinte link no seu navegador:</p>
+                                        <p style="margin: 0; word-break: break-all">
+                                             <a
+                                                  href="{{ .ConfirmationURL }}"
+                                                  style="color: #8be9fd; font-size: 13px; text-decoration: none"
+                                                  >{{ .ConfirmationURL }}</a
+                                             >
+                                        </p>
+                                   </div>
+
+                                   <div style="background-color: rgba(255, 85, 85, 0.08); border-left: 4px solid #ff5555; padding: 16px; border-radius: 6px; margin: 0 0 20px 0">
+                                        <p style="margin: 0 0 8px 0; color: #1f2937; font-size: 14px; font-weight: 600">🛡️ Segurança em Primeiro Lugar</p>
+                                        <p style="margin: 0; color: #6b7280; font-size: 13px; line-height: 1.5">
+                                             Por motivos de segurança, este link expirará em <strong>1 hora</strong>. Se você não solicitou a redefinição de senha, por favor <strong>ignore este e-mail</strong> e sua senha permanecerá inalterada.
+                                        </p>
+                                   </div>
+
+                                   <p style="margin: 0; color: #6b7280; font-size: 14px; line-height: 1.5">Se você suspeita de atividade não autorizada em sua conta, entre em contato conosco imediatamente.</p>
+                              </td>
+                         </tr>
+
+                         <!-- Footer -->
+                         <tr>
+                              <td style="background-color: #f9fafb; padding: 30px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid rgba(107, 114, 128, 0.14)">
+                                   <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 13px">
+                                        <strong>Consultório de Aprendizagem CCI-CA</strong>
+                                   </p>
+                                   <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 12px">Transformando aprendizagem em conquistas 🚀</p>
+                                   <p style="margin: 0; color: #6b7280; font-size: 11px; opacity: 0.8">© {{ .Year }} CCI-CA. Todos os direitos reservados.</p>
+                              </td>
+                         </tr>
+                    </table>
+               </td>
+          </tr>
+     </table>
+</body>

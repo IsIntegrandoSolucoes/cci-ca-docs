@@ -1,0 +1,33 @@
+{
+  "database": {
+    "description": "Ferramentas para Supabase e Banco de Dados",
+    "icon": "database",
+    "tools": [
+      "mcp_supabase_execute_sql",
+      "mcp_supabase_apply_migration",
+      "mcp_supabase_generate_typescript_types",
+      "mcp_supabase_get_advisors",
+      "mcp_supabase_search_docs",
+    ],
+  },
+  "testing": {
+    "description": "Ferramentas para Automação e Browser (Playwright)",
+    "icon": "test-view-icon",
+    "tools": [
+      "mcp_io_github_chr_take_screenshot",
+      "mcp_io_github_chr_take_snapshot",
+      "mcp_io_github_chr_navigate_page",
+      "mcp_io_github_chr_get_console_message",
+    ],
+  },
+  "frontend": {
+    "description": "Ferramentas para React, MUI e Documentação",
+    "icon": "symbol-color",
+    "tools": [
+      "mcp_mui-mcp_useMuiDocs",
+      "mcp_mui-mcp_fetchDocs",
+      "mcp_ref-tools_ref_search_documentation",
+      "mcp_ref-tools_ref_read_url",
+    ],
+  },
+}

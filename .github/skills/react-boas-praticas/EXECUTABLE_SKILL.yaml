@@ -1,0 +1,14 @@
+name: react-boas-praticas
+description: Automatiza validações de boas práticas React, hooks e performance.
+capabilities:
+  - analyze: "Avalia componentes React em busca de anti-padrões e oportunidades de otimização."
+  - optimize: "Sugere refatorações para melhor performance (memo, cleanups, hooks)."
+inputs:
+  - name: code
+    description: O código do componente React.
+    required: true
+outputs:
+  - name: feedback
+    format: markdown
+    description: Diagnóstico de boas práticas e código otimizado.
+entrypoint: SKILL.md

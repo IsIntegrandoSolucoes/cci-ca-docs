@@ -1,0 +1,28 @@
+---
+description: Diretrizes de testes para aplicações TypeScript + React, incluindo testes unitários, testes de integração e estratégias de testes end-to-end.
+---
+
+-    Use Jest para testes unitários de componentes React e funções utilitárias.
+-    Use React Testing Library para testes de componentes focando no comportamento do usuário.
+-    Use Cypress ou Playwright para testes end-to-end de fluxos de usuário.
+-    Implemente metas adequadas de cobertura de testes (objetivo de 80%+ de cobertura).
+-    Use mocking para dependências externas e chamadas de API em testes unitários.
+-    Teste tanto estados de sucesso quanto de erro para componentes e hooks.
+-    Use testes de snapshot moderadamente e apenas para componentes simples e estáveis.
+-    Implemente configuração e limpeza adequadas de dados de teste com beforeEach/afterEach.
+-    Use blocos describe para agrupar testes relacionados para melhor organização.
+-    Teste comportamento assíncrono com padrões adequados de async/await.
+-    Use atributos data-testid para selecionar elementos em testes quando necessário.
+-    Implemente configuração adequada de ambiente para diferentes tipos de teste (unitário, integração, e2e).
+-    Use funções factory para criar dados de teste para reduzir duplicação.
+-    Teste casos extremos e condições de fronteira para componentes e funções.
+-    Use padrão de page objects para testes end-to-end para melhorar a manutenibilidade.
+-    Implemente testes de regressão visual para componentes críticos da UI.
+-    Use ferramentas de cobertura de código para identificar caminhos de código não testados.
+-    Teste acessibilidade com ferramentas como axe-core em testes Jest.
+-    Implemente testes adequados de error boundary para componentes React.
+-    Use testes parametrizados para testar múltiplos cenários similares.
+-    Teste comportamento responsivo com diferentes tamanhos de viewport.
+-    Implemente limpeza adequada entre testes para evitar interdependência de testes.
+-    Use dados realistas em testes ao invés de dados fictícios quando possível.
+-    Teste estados de carregamento, estados vazios e estados de erro para componentes orientados por dados.

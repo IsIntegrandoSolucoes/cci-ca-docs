@@ -1,0 +1,17 @@
+name: supabase-convencoes
+description: Valida e sugere convenções de nomenclatura para objetos do banco de dados (tabelas, colunas, índices, constraints).
+capabilities:
+  - validate: "Analisa código SQL para identificar desvios de nomenclatura."
+  - suggest: "Gera comandos SQL corrigidos seguindo os padrões do CCI-CA."
+inputs:
+  - name: sql_code
+    description: O código SQL a ser analisado ou corrigido.
+    required: true
+  - name: scope
+    description: O tipo de objeto (table, column, index, constraint).
+    required: false
+outputs:
+  - name: analysis
+    format: markdown
+    description: Relatório de conformidade e sugestões de correção.
+entrypoint: SKILL.md

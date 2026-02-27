@@ -1,0 +1,17 @@
+name: react-convencoes
+description: Valida e sugere nomes seguindo os padrões de nomenclatura e arquitetura 3 camadas do projeto.
+capabilities:
+  - validate: "Analisa nomenclatura de arquivos e diretórios contra os padrões PascalCase (componentes) e camelCase (hooks/services)."
+  - structure: "Verifica se a estrutura da feature segue o padrão Container -> Hook -> Presentation."
+inputs:
+  - name: file_path
+    description: O caminho do arquivo ou diretório a ser validado.
+    required: true
+  - name: content
+    description: O conteúdo do arquivo para identificar o tipo (componente, hook, service).
+    required: false
+outputs:
+  - name: validation_report
+    format: markdown
+    description: Relatório de conformidade com sugestões de renomeação ou reestruturação.
+entrypoint: SKILL.md

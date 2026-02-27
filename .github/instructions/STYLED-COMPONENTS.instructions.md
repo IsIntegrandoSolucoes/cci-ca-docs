@@ -1,0 +1,13 @@
+-    Sempre use componentes funcionais com hooks no desenvolvimento React.
+-    Utilize o método attrs do styled-components para props usadas frequentemente.
+-    Use a prop css para estilização condicional quando apropriado.
+-    Use CSS-in-TS para todas as necessidades de estilização.
+-    Siga a documentação do styled-components para melhores práticas.
+-    Use convenções adequadas de nomenclatura para styled components (ex: [Entity]StyledButton).
+-    Use o sistema de temas personalizado consistente no projeto.
+-    Implemente suporte adequado ao TypeScript para styled-components.
+-    Use styled-components/macro para melhor debugging.
+-    Implemente ou use um tema global usando ThemeProvider.
+-    Crie styled components reutilizáveis.
+-    Use props para estilização dinâmica.
+-    Utilize funções auxiliares CSS como css`` quando necessário.

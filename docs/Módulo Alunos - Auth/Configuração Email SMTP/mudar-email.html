@@ -1,0 +1,127 @@
+<head>
+     <meta charset="UTF-8" />
+     <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+     />
+     <title>Confirmar Alteração de E-mail - CCI-CA</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Nunito', 'Inter', Arial, sans-serif; background-color: #f9fafb">
+     <table
+          role="presentation"
+          style="width: 100%; border-collapse: collapse; background-color: #f9fafb"
+     >
+          <tr>
+               <td
+                    align="center"
+                    style="padding: 40px 20px"
+               >
+                    <table
+                         role="presentation"
+                         style="max-width: 600px; width: 100%; border-collapse: collapse; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+                    >
+                         <!-- Header -->
+                         <tr>
+                              <td style="background: linear-gradient(135deg, #f1fa8c 0%, #50fa7b 100%); padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0">
+                                   <h1 style="margin: 0; color: #1f2937; font-size: 28px; font-weight: 700; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05)">🎓 Consultório de Aprendizagem</h1>
+                                   <p style="margin: 8px 0 0 0; color: #1f2937; font-size: 14px; opacity: 0.85">CCI-CA | Excelência Educacional</p>
+                              </td>
+                         </tr>
+
+                         <!-- Content -->
+                         <tr>
+                              <td style="padding: 40px 30px">
+                                   <h2 style="margin: 0 0 20px 0; color: #1f2937; font-size: 22px; font-weight: 600; border-left: 4px solid #f1fa8c; padding-left: 16px">Confirmar Alteração de E-mail</h2>
+
+                                   <p style="margin: 0 0 20px 0; color: #1f2937; font-size: 16px; line-height: 1.6">Olá! ✉️</p>
+
+                                   <p style="margin: 0 0 20px 0; color: #1f2937; font-size: 16px; line-height: 1.6">Você solicitou a alteração do e-mail da sua conta no <strong>Consultório de Aprendizagem CCI-CA</strong>.</p>
+
+                                   <div style="background-color: rgba(241, 250, 140, 0.15); border-left: 4px solid #f1fa8c; padding: 20px; border-radius: 6px; margin: 0 0 30px 0">
+                                        <table
+                                             role="presentation"
+                                             style="width: 100%; border-collapse: collapse"
+                                        >
+                                             <tr>
+                                                  <td style="padding: 8px 0; color: #6b7280; font-size: 14px; font-weight: 600">E-mail Atual:</td>
+                                                  <td style="padding: 8px 0; color: #1f2937; font-size: 14px; font-weight: 400; text-align: right">{{ .Email }}</td>
+                                             </tr>
+                                             <tr>
+                                                  <td
+                                                       colspan="2"
+                                                       style="padding: 4px 0"
+                                                  >
+                                                       <div style="height: 1px; background-color: rgba(107, 114, 128, 0.2)"></div>
+                                                  </td>
+                                             </tr>
+                                             <tr>
+                                                  <td style="padding: 8px 0; color: #6b7280; font-size: 14px; font-weight: 600">Novo E-mail:</td>
+                                                  <td style="padding: 8px 0; color: #50fa7b; font-size: 14px; font-weight: 600; text-align: right">{{ .NewEmail }}</td>
+                                             </tr>
+                                        </table>
+                                   </div>
+
+                                   <p style="margin: 0 0 30px 0; color: #1f2937; font-size: 16px; line-height: 1.6">Para confirmar esta alteração e ativar seu novo endereço de e-mail, clique no botão abaixo:</p>
+
+                                   <!-- CTA Button -->
+                                   <table
+                                        role="presentation"
+                                        style="width: 100%; border-collapse: collapse; margin: 0 0 30px 0"
+                                   >
+                                        <tr>
+                                             <td align="center">
+                                                  <a
+                                                       href="{{ .ConfirmationURL }}"
+                                                       style="
+                                                            display: inline-block;
+                                                            background: linear-gradient(135deg, #f1fa8c 0%, #50fa7b 100%);
+                                                            color: #1f2937;
+                                                            text-decoration: none;
+                                                            padding: 16px 40px;
+                                                            border-radius: 6px;
+                                                            font-size: 16px;
+                                                            font-weight: 600;
+                                                            box-shadow: 0 4px 8px rgba(241, 250, 140, 0.3);
+                                                            transition: all 0.3s ease;
+                                                       "
+                                                  >
+                                                       ✅ Confirmar Novo E-mail
+                                                  </a>
+                                             </td>
+                                        </tr>
+                                   </table>
+
+                                   <div style="background-color: rgba(50, 250, 123, 0.08); border-left: 4px solid #50fa7b; padding: 16px; border-radius: 6px; margin: 0 0 20px 0">
+                                        <p style="margin: 0 0 8px 0; color: #1f2937; font-size: 14px; font-weight: 600">⚠️ Link Alternativo</p>
+                                        <p style="margin: 0 0 8px 0; color: #6b7280; font-size: 13px; line-height: 1.5">Se o botão não funcionar, copie e cole o seguinte link no seu navegador:</p>
+                                        <p style="margin: 0; word-break: break-all">
+                                             <a
+                                                  href="{{ .ConfirmationURL }}"
+                                                  style="color: #50fa7b; font-size: 13px; text-decoration: none"
+                                                  >{{ .ConfirmationURL }}</a
+                                             >
+                                        </p>
+                                   </div>
+
+                                   <div style="background-color: rgba(255, 85, 85, 0.08); border-left: 4px solid #ff5555; padding: 16px; border-radius: 6px; margin: 0 0 20px 0">
+                                        <p style="margin: 0 0 8px 0; color: #1f2937; font-size: 14px; font-weight: 600">🛡️ Importante - Segurança</p>
+                                        <p style="margin: 0; color: #6b7280; font-size: 13px; line-height: 1.5">Se você <strong>não solicitou</strong> esta alteração, entre em contato conosco <strong>imediatamente</strong>. Este link expirará em <strong>24 horas</strong>.</p>
+                                   </div>
+                              </td>
+                         </tr>
+
+                         <!-- Footer -->
+                         <tr>
+                              <td style="background-color: #f9fafb; padding: 30px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid rgba(107, 114, 128, 0.14)">
+                                   <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 13px">
+                                        <strong>Consultório de Aprendizagem CCI-CA</strong>
+                                   </p>
+                                   <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 12px">Transformando aprendizagem em conquistas 🚀</p>
+                                   <p style="margin: 0; color: #6b7280; font-size: 11px; opacity: 0.8">© {{ .Year }} CCI-CA. Todos os direitos reservados.</p>
+                              </td>
+                         </tr>
+                    </table>
+               </td>
+          </tr>
+     </table>
+</body>

@@ -1,0 +1,83 @@
+<head>
+     <meta charset="UTF-8" />
+     <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+     />
+     <title>Código de Reautenticação - CCI-CA</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Nunito', 'Inter', Arial, sans-serif; background-color: #f9fafb">
+     <table
+          role="presentation"
+          style="width: 100%; border-collapse: collapse; background-color: #f9fafb"
+     >
+          <tr>
+               <td
+                    align="center"
+                    style="padding: 40px 20px"
+               >
+                    <table
+                         role="presentation"
+                         style="max-width: 600px; width: 100%; border-collapse: collapse; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+                    >
+                         <!-- Header -->
+                         <tr>
+                              <td style="background: linear-gradient(135deg, #ff5555 0%, #bd93f9 100%); padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0">
+                                   <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)">🎓 Consultório de Aprendizagem</h1>
+                                   <p style="margin: 8px 0 0 0; color: #f8f8f2; font-size: 14px; opacity: 0.95">CCI-CA | Excelência Educacional</p>
+                              </td>
+                         </tr>
+
+                         <!-- Content -->
+                         <tr>
+                              <td style="padding: 40px 30px">
+                                   <h2 style="margin: 0 0 20px 0; color: #1f2937; font-size: 22px; font-weight: 600; border-left: 4px solid #ff5555; padding-left: 16px">Código de Reautenticação 🔐</h2>
+
+                                   <p style="margin: 0 0 20px 0; color: #1f2937; font-size: 16px; line-height: 1.6">Olá! 👋</p>
+
+                                   <p style="margin: 0 0 30px 0; color: #1f2937; font-size: 16px; line-height: 1.6">Para garantir a segurança da sua conta no <strong>Consultório de Aprendizagem CCI-CA</strong>, é necessário confirmar sua identidade. Use o código abaixo para reautenticar:</p>
+
+                                   <!-- Token Code Display -->
+                                   <table
+                                        role="presentation"
+                                        style="width: 100%; border-collapse: collapse; margin: 0 0 30px 0"
+                                   >
+                                        <tr>
+                                             <td align="center">
+                                                  <div style="background: linear-gradient(135deg, rgba(255, 85, 85, 0.1) 0%, rgba(189, 147, 249, 0.1) 100%); border: 2px dashed #ff5555; border-radius: 8px; padding: 24px; display: inline-block">
+                                                       <p style="margin: 0 0 8px 0; color: #6b7280; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px">Seu Código de Segurança</p>
+                                                       <p style="margin: 0; color: #1f2937; font-size: 32px; font-weight: 700; letter-spacing: 4px; font-family: 'Courier New', monospace">{{ .Token }}</p>
+                                                  </div>
+                                             </td>
+                                        </tr>
+                                   </table>
+
+                                   <div style="background-color: rgba(255, 85, 85, 0.08); border-left: 4px solid #ff5555; padding: 16px; border-radius: 6px; margin: 0 0 20px 0">
+                                        <p style="margin: 0 0 8px 0; color: #1f2937; font-size: 14px; font-weight: 600">⏱️ Código Temporário</p>
+                                        <p style="margin: 0; color: #6b7280; font-size: 13px; line-height: 1.5">Este código expira em <strong>10 minutos</strong> por motivos de segurança. Digite-o exatamente como mostrado acima, incluindo maiúsculas e minúsculas.</p>
+                                   </div>
+
+                                   <div style="background-color: rgba(189, 147, 249, 0.08); border-left: 4px solid #bd93f9; padding: 16px; border-radius: 6px; margin: 0 0 20px 0">
+                                        <p style="margin: 0 0 8px 0; color: #1f2937; font-size: 14px; font-weight: 600">💡 Dica de Segurança</p>
+                                        <p style="margin: 0; color: #6b7280; font-size: 13px; line-height: 1.5">Nunca compartilhe este código com ninguém. Nossa equipe <strong>jamais</strong> solicitará este código por telefone, e-mail ou qualquer outro meio de comunicação.</p>
+                                   </div>
+
+                                   <p style="margin: 0; color: #6b7280; font-size: 14px; line-height: 1.5">Se você não solicitou este código, por favor altere sua senha imediatamente e entre em contato conosco.</p>
+                              </td>
+                         </tr>
+
+                         <!-- Footer -->
+                         <tr>
+                              <td style="background-color: #f9fafb; padding: 30px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid rgba(107, 114, 128, 0.14)">
+                                   <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 13px">
+                                        <strong>Consultório de Aprendizagem CCI-CA</strong>
+                                   </p>
+                                   <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 12px">Transformando aprendizagem em conquistas 🚀</p>
+                                   <p style="margin: 0; color: #6b7280; font-size: 11px; opacity: 0.8">© {{ .Year }} CCI-CA. Todos os direitos reservados.</p>
+                              </td>
+                         </tr>
+                    </table>
+               </td>
+          </tr>
+     </table>
+</body>

@@ -1,0 +1,80 @@
+name: javascript-core-runtime-analyzer
+description: "Analisa codigo JavaScript para problemas de escopo, hoisting, closure e ordem de execucao no event loop"
+version: "1.0.0"
+
+capabilities:
+  - detect_var_loop_closure_bug
+  - explain_hoisting_and_tdz
+  - classify_tasks_micro_vs_macro
+  - suggest_scope_safe_refactors
+
+inputs:
+  code:
+    type: string
+    description: "Codigo JavaScript/TypeScript para analise"
+    required: true
+  context:
+    type: object
+    description: "Contexto opcional (arquivo, runtime alvo, trecho de erro)"
+    properties:
+      filepath:
+        type: string
+      runtime:
+        type: string
+        enum: [browser, node, deno, bun, unknown]
+
+outputs:
+  findings:
+    type: array
+    items:
+      type: object
+      properties:
+        severity:
+          type: string
+          enum: [error, warning, info]
+        category:
+          type: string
+          enum:
+            [
+              hoisting_tdz,
+              var_scope_bug,
+              closure_behavior,
+              event_loop_order,
+              async_order_risk,
+            ]
+        line:
+          type: integer
+        message:
+          type: string
+        recommendation:
+          type: string
+        example_fix:
+          type: string
+
+entrypoint:
+  type: inline
+  runtime: llm
+  prompt: |
+    Voce e um especialista em JavaScript runtime.
+
+    Analise o codigo abaixo e identifique:
+    1. Problemas de escopo com var/let/const
+    2. Casos de hoisting e Temporal Dead Zone (TDZ)
+    3. Bug classico de loop com var + callback assincrona
+    4. Uso de closures (correto ou com risco de comportamento inesperado)
+    5. Riscos de ordem de execucao relacionados a microtasks/macrotasks
+
+    Codigo:
+    ```js
+    {{code}}
+    ```
+
+    Retorne JSON com array findings contendo:
+    - severity
+    - category
+    - line
+    - message
+    - recommendation
+    - example_fix
+
+    Priorize precisao tecnica e explique ordem de execucao quando houver assincronia.
