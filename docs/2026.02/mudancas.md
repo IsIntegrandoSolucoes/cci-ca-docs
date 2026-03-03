@@ -358,6 +358,46 @@ Impactos diretos:
 - Necessidade de validação de progressão de aula anterior para liberar próxima aula.
 - Reprodução de vídeo por token temporário no backend (sem exposição de URL final em tabela pública).
 
+---
+
+# Modelo de Negócio e Monetização (2026-03-03)
+
+## Dois Públicos-Alvo
+
+O sistema atende dois perfis distintos:
+
+### 1. Professor Individual (B2C — SaaS)
+
+- O professor se cadastra como pessoa física e assina um plano mensal de uso da plataforma.
+- **Planos disponíveis:**
+  - **Professor Starter** — R$ 97/mês (até 3 cursos, 50 alunos simultâneos, 5 GB)
+  - **Professor Pro** — R$ 197/mês (até 10 cursos, 200 alunos simultâneos, 25 GB)
+- O professor cria seus cursos, matricula alunos e recebe dos alunos **diretamente na sua conta bancária via split de pagamento**.
+- A plataforma retém um percentual de cada pagamento do aluno (via split automático).
+
+### 2. Empresa / Curso (B2B)
+
+- A empresa (PJ) se cadastra e assina uma **mensalidade mensal** para uso da plataforma.
+- A empresa cadastra múltiplos professores vinculados a ela.
+- A empresa oferece cursos com **contratos anuais para seus alunos** (o contrato anual é entre a empresa/curso e o aluno, NÃO com a plataforma).
+- A plataforma retém um **percentual de cada pagamento do aluno via split de pagamento**.
+- **Preço: sob consulta** (depende de volume, licenças, etc.)
+
+## Split de Pagamento
+
+O split de pagamento é o mecanismo central de monetização e aplica-se a ambos os perfis:
+
+- **Para o Professor:** O aluno paga pelo curso → a plataforma retém sua % → o professor recebe o restante diretamente na sua conta bancária.
+- **Para a Empresa:** O aluno paga pelo curso/contrato anual → a plataforma retém sua % → a empresa recebe o restante diretamente na sua conta bancária.
+
+## Resumo da Receita da Plataforma
+
+| Fonte de Receita              | Professor Individual | Empresa B2B |
+| ----------------------------- | -------------------- | ----------- |
+| Assinatura mensal (SaaS)      | ✅ R$ 97 ou R$ 197   | ✅ Sob consulta |
+| % sobre pagamento do aluno    | ✅ Via split          | ✅ Via split |
+| Contrato anual com aluno      | ❌ Não se aplica      | ✅ Empresa ↔ Aluno |
+
 Documentos de apoio atualizados:
 
 - `docs/mapa_telas_modulos.md`

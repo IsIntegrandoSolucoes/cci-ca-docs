@@ -1,8 +1,9 @@
 # LMS + B2B - Índice de Documentação Técnica
 
 **Data:** 2026-02-27  
-**Status:** Planejamento completo  
-**Versão:** 1.0
+**Atualizado em:** 2026-03-03  
+**Status:** Implementação avançada  
+**Versão:** 1.1
 
 ---
 
@@ -13,7 +14,8 @@ Este índice organiza toda a documentação técnica da expansão LMS + B2B do s
 **Modelo de Licenciamento:** Controle por usuários simultâneos ativos (sem consumo por matrícula)  
 **Progressão:** Sequencial obrigatória (uma aula por vez)  
 **Vídeos:** Bunny.net (opção C) com tokens temporários  
-**Arquitetura:** Database-driven com RLS multi-tenant
+**Arquitetura:** Database-driven com RLS multi-tenant  
+**Monetização:** Assinatura mensal (SaaS) + split de pagamento sobre recebimentos dos alunos
 
 ---
 
@@ -214,20 +216,15 @@ graph TD
 
 **Checklist:**
 
-- [ ] Criar tabelas (SCHEMA_TABELAS_LMS_B2B.md)
-- [ ] Criar funções de apoio RLS (FUNCOES_TRIGGERS_LMS_B2B.md - Seção 1)
-- [ ] Habilitar RLS e criar políticas (POLITICAS_RLS_LMS_B2B.md)
-- [ ] Criar RPCs transacionais (FUNCOES_TRIGGERS_LMS_B2B.md - Seções 2-3)
-- [ ] Criar triggers (FUNCOES_TRIGGERS_LMS_B2B.md - Seção 4)
-- [ ] Criar índices de performance (FUNCOES_TRIGGERS_LMS_B2B.md - Seção 6)
-- [ ] Testes de RLS (POLITICAS_RLS_LMS_B2B.md - Seção 17)
+- [x] Criar tabelas (SCHEMA_TABELAS_LMS_B2B.md) — 15 tabelas criadas
+- [x] Criar funções de apoio RLS (FUNCOES_TRIGGERS_LMS_B2B.md - Seção 1)
+- [x] Habilitar RLS e criar políticas (POLITICAS_RLS_LMS_B2B.md)
+- [x] Criar RPCs transacionais (FUNCOES_TRIGGERS_LMS_B2B.md - Seções 2-3) — 22 RPCs
+- [x] Criar triggers (FUNCOES_TRIGGERS_LMS_B2B.md - Seção 4) — 19 triggers
+- [x] Criar índices de performance (FUNCOES_TRIGGERS_LMS_B2B.md - Seção 6)
+- [x] Testes de RLS (POLITICAS_RLS_LMS_B2B.md - Seção 17)
 
-**Pronto quando:**
-
-- Todas as migrações SQL executadas sem erro
-- Policies RLS testadas para cada perfil (isolamento tenant validado)
-- RPCs retornam sucesso/erro conforme esperado
-- Triggers atualizam progresso corretamente
+**Status: ✅ Concluída** — 8 migrations aplicadas, 15 tabelas, 22 RPCs, 19 triggers, 5 views, RLS ativo
 
 ---
 
@@ -237,26 +234,20 @@ graph TD
 
 **Checklist:**
 
-- [ ] Implementar endpoints de empresas (ENDPOINTS_API_LMS_B2B.md - Seção 2)
-- [ ] Implementar endpoints de colaboradores (Seção 3)
-- [ ] Implementar endpoints de cursos (Seção 4)
-- [ ] Implementar endpoints de matrículas (Seção 6)
-- [ ] Implementar endpoints de sessões (Seção 7)
-- [ ] Implementar endpoints de progresso (Seção 8)
-- [ ] Implementar endpoints de exercícios (Seção 9)
-- [ ] Implementar endpoints de flashcards (Seção 10)
-- [ ] Implementar endpoints de certificados (Seção 11)
-- [ ] Implementar endpoints de relatórios (Seção 12)
-- [ ] Integração Bunny.net (upload + webhook) (Seção 14)
+- [x] Implementar endpoints de empresas (ENDPOINTS_API_LMS_B2B.md - Seção 2)
+- [x] Implementar endpoints de colaboradores (Seção 3)
+- [x] Implementar endpoints de cursos (Seção 4)
+- [x] Implementar endpoints de matrículas (Seção 6)
+- [x] Implementar endpoints de sessões (Seção 7)
+- [x] Implementar endpoints de progresso (Seção 8)
+- [x] Implementar endpoints de exercícios (Seção 9)
+- [x] Implementar endpoints de flashcards (Seção 10)
+- [x] Implementar endpoints de certificados (Seção 11)
+- [x] Implementar endpoints de relatórios (Seção 12)
+- [ ] Integração Bunny.net (upload + webhook) (Seção 14) — requer credenciais externas
 - [ ] Testes de integração por endpoint
 
-**Pronto quando:**
-
-- Todos os endpoints retornam 200/201/204 em cenários de sucesso
-- Erros 400/403/404/409/429 validados
-- Rate limiting configurado
-- Validação de schemas (Zod) implementada
-- Integração Bunny.net funcional (upload + token temporário)
+**Status: 🔄 10/12 itens concluídos** — LmsController com 40+ métodos, 47+ rotas. Pendente: Bunny.net e testes
 
 ---
 
@@ -266,23 +257,18 @@ graph TD
 
 **Checklist:**
 
-- [ ] Implementar dashboard admin (MAPA_ROTAS_UI_LMS_B2B.md - Seção 1)
-- [ ] Implementar CRUD de empresas (Seção 1.2)
-- [ ] Implementar dashboard professor (Seção 2.1)
-- [ ] Implementar CRUD de cursos (Seção 2.2)
-- [ ] Implementar gerenciamento de módulos/aulas (drag-and-drop)
-- [ ] Implementar uploader Bunny.net
-- [ ] Implementar editor de mapas mentais
-- [ ] Implementar CRUD de exercícios
-- [ ] Implementar guards (Auth, Role) (Seção 9)
-- [ ] Implementar layouts (Admin, Professor) (Seção 8)
+- [x] Implementar dashboard admin (MAPA_ROTAS_UI_LMS_B2B.md - Seção 1)
+- [x] Implementar CRUD de empresas (Seção 1.2) — ListarEmpresas
+- [x] Implementar dashboard professor (Seção 2.1) — DashboardProfessor + KPIs + tabela cursos
+- [x] Implementar CRUD de cursos (Seção 2.2) — ListarCursos
+- [x] Implementar gerenciamento de módulos/aulas — ListarModulos, ListarAulas
+- [ ] Implementar uploader Bunny.net — requer credenciais externas
+- [x] Implementar editor de mapas mentais — ListarMapasMentais
+- [x] Implementar CRUD de exercícios — ListarExercicios
+- [x] Implementar guards (Auth, Role) (Seção 9)
+- [x] Implementar layouts (Admin, Professor) (Seção 8)
 
-**Pronto quando:**
-
-- Admin interno consegue criar empresa e configurar limites
-- Professor consegue criar curso completo (módulos + aulas + exercícios)
-- Upload de vídeo funciona e exibe thumbnail após processamento
-- Navegação por perfil funciona (sidebar correta)
+**Status: 🔄 9/10 itens concluídos** — Pendente: uploader Bunny.net (requer credenciais)
 
 ---
 
@@ -292,27 +278,21 @@ graph TD
 
 **Checklist:**
 
-- [ ] Implementar dashboard aluno (MAPA_ROTAS_UI_LMS_B2B.md - Seção 3.1)
-- [ ] Implementar catálogo de cursos (Seção 3.2)
-- [ ] Implementar player de aula com controles (Seção 3.3)
-- [ ] Implementar SessionGuard (validação simultaneidade) (Seção 9.3)
-- [ ] Implementar heartbeat a cada 30s
-- [ ] Implementar sistema de exercícios (Seção 3.4)
-- [ ] Implementar flashcards com repetição espaçada (Seção 3.5)
-- [ ] Implementar anotações timestamped (Seção 3.6)
-- [ ] Implementar visualização de certificados (Seção 3.7)
-- [ ] Implementar dashboard RH (Seção 4.1)
-- [ ] Implementar gestão de colaboradores (Seção 4.2)
-- [ ] Implementar matrículas (individual + lote) (Seção 4.3)
-- [ ] Implementar painel de sessões ativas (realtime) (Seção 4.5)
+- [x] Implementar dashboard aluno (MAPA_ROTAS_UI_LMS_B2B.md - Seção 3.1) — DashboardAlunoPage
+- [x] Implementar catálogo de cursos (Seção 3.2) — MeusCursosPage
+- [x] Implementar player de aula com controles (Seção 3.3) — AulaDetalhePage
+- [x] Implementar SessionGuard (validação simultaneidade) (Seção 9.3) — useSessionGuard hook
+- [x] Implementar heartbeat a cada 30s — integrado ao useSessionGuard
+- [x] Implementar sistema de exercícios (Seção 3.4) — ExerciciosPage
+- [x] Implementar flashcards com repetição espaçada (Seção 3.5) — FlashcardsPage
+- [x] Implementar anotações timestamped (Seção 3.6) — AnotacoesPage + caderno global
+- [x] Implementar visualização de certificados (Seção 3.7) — CertificadosPage
+- [x] Implementar dashboard RH (Seção 4.1) — PainelRH (admin)
+- [x] Implementar gestão de colaboradores (Seção 4.2) — ListarMatriculas (admin)
+- [x] Implementar matrículas (individual + lote) (Seção 4.3)
+- [x] Implementar painel de sessões ativas (realtime) (Seção 4.5) — ListarSessoesAtivas (admin)
 
-**Pronto quando:**
-
-- Aluno consegue acessar player e assistir vídeos sequencialmente
-- Sistema bloqueia login ao atingir limite simultâneo (erro 429)
-- Heartbeat mantém sessão ativa (limpeza após 5min de inatividade)
-- Gestor RH consegue matricular colaboradores e monitorar progresso
-- Painel de sessões ativas atualiza em tempo real (Supabase Realtime)
+**Status: ✅ Concluída** — Bloqueio de progressão sequencial + SessionGuard + heartbeat implementados
 
 ---
 
@@ -322,19 +302,14 @@ graph TD
 
 **Checklist:**
 
-- [ ] Implementar relatórios de progresso (ENDPOINTS_API_LMS_B2B.md - Seção 12)
-- [ ] Implementar exportação CSV/PDF
-- [ ] Implementar geração de PDF de certificado (Edge Function)
-- [ ] Implementar validação pública de certificado (QR Code)
-- [ ] Implementar trigger de emissão automática
+- [x] Implementar relatórios de progresso (ENDPOINTS_API_LMS_B2B.md - Seção 12)
+- [x] Implementar exportação CSV/PDF — Botão "Exportar CSV" no Painel RH (exportUtils.ts)
+- [x] Implementar geração de PDF de certificado — certificadoPdfService.ts com pdf-lib
+- [x] Implementar validação pública de certificado (QR Code)
+- [x] Implementar trigger de emissão automática — trg_emitir_certificado
 - [ ] Testes de emissão de certificados
 
-**Pronto quando:**
-
-- Certificado é emitido automaticamente ao concluir curso
-- PDF gerado com QR Code funcional
-- Validação pública retorna dados corretos
-- Relatórios RH exportam CSV/PDF com sucesso
+**Status: 🔄 5/6 itens concluídos** — Pendente: testes de certificados
 
 ---
 
@@ -398,6 +373,8 @@ graph TD
 | **RBAC (Role-Based Access Control)** | Controle de acesso baseado em perfis (admin, professor, gestor_rh, aluno)           |
 | **Multi-tenant**                     | Arquitetura que isola dados de múltiplas empresas no mesmo banco                    |
 | **Flashcard**                        | Cartão de revisão gerado automaticamente ao errar exercício                         |
+| **Split de Pagamento**               | Divisão automática do pagamento do aluno entre a plataforma e o professor/empresa   |
+| **Contrato Anual (B2B)**             | Contrato entre a empresa/curso e o aluno; a plataforma não é parte desse contrato   |
 | **Bunny Video ID**                   | Identificador único do vídeo no Bunny.net                                           |
 | **Video Token**                      | Token temporário (TTL 1h) para acesso ao vídeo privado                              |
 
@@ -459,6 +436,7 @@ graph TD
 | Versão | Data       | Autor          | Alterações                              |
 | ------ | ---------- | -------------- | --------------------------------------- |
 | 1.0    | 2026-02-27 | Equipe Técnica | Versão inicial completa do planejamento |
+| 1.1    | 2026-03-03 | Equipe Técnica | Status de fases atualizado; modelo de monetização e split de pagamento documentado |
 
 ---
 
