@@ -29,10 +29,10 @@ BEGIN -- Obter empresa do usuário
 SELECT
   eu.fk_id_empresa INTO v_empresa_id
 FROM
-  empresa_usuarios eu
+  lms_empresa_usuarios eu
 WHERE
   eu.fk_id_pessoa = p_pessoa_id
-  AND eu.ativo = TRUE
+  AND eu.status = 'ativo'
   AND eu.deleted_at IS NULL
 LIMIT
   1;
@@ -66,13 +66,13 @@ END IF;
 SELECT
   e.limite_usuarios_simultaneos INTO v_limite_simultaneo
 FROM
-  empresas e
+  lms_empresas e
 WHERE
   e.id = v_empresa_id;
 
 -- Limpar sessões expiradas (> 5 minutos sem heartbeat)
 DELETE FROM
-  sessoes_ativas
+  lms_sessoes_ativas
 WHERE
   fk_id_empresa = v_empresa_id
   AND ultimo_heartbeat < NOW() - INTERVAL '5 minutes';
@@ -81,7 +81,7 @@ WHERE
 SELECT
   COUNT(*) INTO v_sessoes_ativas
 FROM
-  sessoes_ativas
+  lms_sessoes_ativas
 WHERE
   fk_id_empresa = v_empresa_id;
 
@@ -90,13 +90,13 @@ IF EXISTS (
   SELECT
     1
   FROM
-    sessoes_ativas
+    lms_sessoes_ativas
   WHERE
     fk_id_pessoa = p_pessoa_id
     AND fk_id_curso = p_curso_id
 ) THEN -- Atualizar heartbeat da sessão existente
 UPDATE
-  sessoes_ativas
+  lms_sessoes_ativas
 SET
   ultimo_heartbeat = NOW()
 WHERE
@@ -134,7 +134,7 @@ END IF;
 
 -- Criar nova sessão
 INSERT INTO
-  sessoes_ativas (
+  lms_sessoes_ativas (
     fk_id_empresa,
     fk_id_pessoa,
     fk_id_curso,
@@ -177,7 +177,7 @@ OR REPLACE FUNCTION fn_encerrar_sessao(p_session_token TEXT) RETURNS JSONB LANGU
 SET
   search_path = public AS $ $ BEGIN
 DELETE FROM
-  sessoes_ativas
+  lms_sessoes_ativas
 WHERE
   session_token = p_session_token;
 
@@ -370,9 +370,9 @@ COMMENT ON COLUMN aulas.janela_acesso_dias IS 'Dias após matrícula para expira
 
 -- Vincular FK de cursos em sessoes_ativas
 ALTER TABLE
-  sessoes_ativas
+  lms_sessoes_ativas
 ADD
-  CONSTRAINT fk_sessoes_ativas_curso FOREIGN KEY (fk_id_curso) REFERENCES cursos(id);
+  CONSTRAINT fk_lms_sessoes_ativas_curso FOREIGN KEY (fk_id_curso) REFERENCES cursos(id);
 
 -- =====================================================
 -- 3. TABELAS DE MATRÍCULA E PROGRESSO
@@ -386,7 +386,7 @@ CREATE TABLE IF NOT EXISTS usuario_curso (
   updated_by BIGINT,
   deleted_at TIMESTAMPTZ,
   deleted_by BIGINT,
-  fk_id_empresa BIGINT NOT NULL REFERENCES empresas(id),
+  fk_id_empresa BIGINT NOT NULL REFERENCES lms_empresas(id),
   fk_id_pessoa BIGINT NOT NULL REFERENCES pessoas(id),
   fk_id_curso BIGINT NOT NULL REFERENCES cursos(id),
   STATUS TEXT NOT NULL DEFAULT 'matriculado' CHECK (

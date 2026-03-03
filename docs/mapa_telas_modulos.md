@@ -58,6 +58,10 @@ Organizado por áreas de atuação da secretaria e coordenação.
 - **Nota Fiscal / Lotes NFe:** Interface de integração com órgãos fiscais para faturamento.
 - **Configuração de Taxas:** Gestão das regras de split de pagamento por modalidade.
 - **Relatórios de Repasse:** Painel de apuração de valores devidos a professores e parceiros.
+- **Fontes de Renda:** Visão geral das origens de receita do consultório, organizadas por modalidade (CA-AP, CA-AG, CA-PP, CA-CT, CA-TV, CA-TM, LMS/B2B).
+- **Controle de Split:** Tabela resumo de distribuição de repasse por modalidade, com atalho para a Configuração Avançada de Taxas.
+- **Planos para Professores:** CRUD de planos da landing page B2P (professor parceiro), gerenciando nome, slug, preço, período, destaque e CTA.
+- **Planos para Empresas:** CRUD de planos da landing page B2B (empresa cliente LMS), com os mesmos campos de configuração dos planos de professor.
 
 ### **1.7. Estrutura e Apoio**
 

@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS certificados (
   deleted_by BIGINT,
   fk_id_pessoa BIGINT NOT NULL REFERENCES pessoas(id) ON DELETE CASCADE,
   fk_id_curso BIGINT NOT NULL REFERENCES cursos(id) ON DELETE CASCADE,
-  fk_id_empresa BIGINT REFERENCES empresas(id) ON DELETE
+  fk_id_empresa BIGINT REFERENCES lms_empresas(id) ON DELETE
   SET
     NULL,
     codigo_validacao VARCHAR(50) UNIQUE NOT NULL,
@@ -199,7 +199,7 @@ FROM
   certificados c
   JOIN pessoas p ON p.id = c.fk_id_pessoa
   JOIN cursos cu ON cu.id = c.fk_id_curso
-  LEFT JOIN empresas e ON e.id = c.fk_id_empresa
+  LEFT JOIN lms_empresas e ON e.id = c.fk_id_empresa
 WHERE
   c.codigo_validacao = p_codigo_validacao
   AND c.deleted_at IS NULL;
@@ -251,10 +251,10 @@ SELECT
     2
   ) AS taxa_conclusao_percentual
 FROM
-  empresas e
-  JOIN empresa_usuarios eu ON eu.fk_id_empresa = e.id
+  lms_empresas e
+  JOIN lms_empresa_usuarios eu ON eu.fk_id_empresa = e.id
   AND eu.deleted_at IS NULL
-  AND eu.ativo = TRUE
+  AND eu.status = 'ativo'
   JOIN usuario_curso uc ON uc.fk_id_pessoa = eu.fk_id_pessoa
   AND uc.deleted_at IS NULL
   JOIN cursos cu ON cu.id = uc.fk_id_curso
@@ -286,10 +286,10 @@ SELECT
   cert.carga_horaria,
   cert.data_emissao
 FROM
-  empresas e
-  JOIN empresa_usuarios eu ON eu.fk_id_empresa = e.id
+  lms_empresas e
+  JOIN lms_empresa_usuarios eu ON eu.fk_id_empresa = e.id
   AND eu.deleted_at IS NULL
-  AND eu.ativo = TRUE
+  AND eu.status = 'ativo'
   JOIN pessoas p ON p.id = eu.fk_id_pessoa
   AND p.deleted_at IS NULL
   JOIN certificados cert ON cert.fk_id_pessoa = p.id
@@ -378,7 +378,7 @@ SELECT
           )
         )
       FROM
-        empresa_usuarios eu
+        lms_empresa_usuarios eu
         LEFT JOIN usuario_curso uc ON uc.fk_id_pessoa = eu.fk_id_pessoa
         AND uc.deleted_at IS NULL
         AND (
@@ -388,7 +388,7 @@ SELECT
       WHERE
         eu.fk_id_empresa = p_empresa_id
         AND eu.deleted_at IS NULL
-        AND eu.ativo = TRUE
+        AND eu.status = 'ativo'
     ),
     'colaboradores',
     (
@@ -447,13 +447,13 @@ SELECT
           '[]' :: JSONB
         )
       FROM
-        empresa_usuarios eu2
+        lms_empresa_usuarios eu2
         JOIN pessoas p ON p.id = eu2.fk_id_pessoa
         AND p.deleted_at IS NULL
       WHERE
         eu2.fk_id_empresa = p_empresa_id
         AND eu2.deleted_at IS NULL
-        AND eu2.ativo = TRUE
+        AND eu2.status = 'ativo'
     )
   ) INTO v_resultado;
 

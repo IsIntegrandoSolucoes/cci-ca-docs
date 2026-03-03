@@ -1,8 +1,12 @@
 -- =====================================================
 -- Migration: LMS B2B - Fase 1 Core
 -- Data: 2026-03-02
--- Descrição: Tabelas base para multi-tenancy B2B
--- Convenções: supabase-convencoes (BIGINT, fk_id_*, snake_case)
+-- Status: OBSOLETA — Substituída por:
+--   - 20260227100000_b2b_empresas_licencas_base.sql (lms_empresas, lms_empresa_usuarios)
+--   - 20260303_unificar_empresas_lms_empresas.sql (unificação + lms_sessoes_ativas)
+-- As tabelas "empresas" e "empresa_usuarios" (sem prefixo lms_) foram descartadas.
+-- A source of truth é lms_empresas / lms_empresa_usuarios / lms_sessoes_ativas.
+-- As funções fn_* foram recriadas na migração de unificação.
 -- =====================================================
 -- =====================================================
 -- 1. TABELAS
